@@ -1,6 +1,6 @@
-CC
+HC
 ==
-**common configuration module**
+**Human-friendly configuration tools**
 
 
 Usage
@@ -14,7 +14,7 @@ Loading conf from following possible paths:
 
 where `$CC_ROOT` is default to the directory containing current running file (aka `require.main.filename`), or specified by env varialbe.
 
-    require("cc")(function(e, conf) {
+    require("hc")(function(e, conf) {
       if(e) {
         console.log("failed to load conf");
         console.error(e);
