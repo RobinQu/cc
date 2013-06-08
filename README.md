@@ -22,3 +22,19 @@ where `$CC_ROOT` is default to the directory containing current running file (ak
       }
       console.log(conf);
     });
+    
+    
+    
+TODO
+----
+
+* More configuration source support:
+
+  * CouchDB 
+  * MongoDB
+
+* Browser Support
+  
+  * LocalStorage
+  * HTTP
+    
