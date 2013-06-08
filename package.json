@@ -1,0 +1,19 @@
+{
+  "name": "cc",
+  "version": "0.0.1",
+  "description": "Common configuration module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:RobinQu/cc.git"
+  },
+  "keywords": [
+    "config",
+    "async"
+  ],
+  "author": "RobinQu",
+  "license": "BSD"
+}
