@@ -1,0 +1,4 @@
+cc
+==
+
+Common configuration module
