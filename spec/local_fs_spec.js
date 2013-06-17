@@ -15,9 +15,7 @@ describe("default setup", function() {
     runs(function() {
       cc(function(e, conf) {
         loaded = true;
-        if(e) {
-          expect(e).toBeFalsy();
-        }
+        expect(e).toBeFalsy();
         expect(conf).toBeTruthy();
         expect(conf.foo).toEqual(sample.foo);
       

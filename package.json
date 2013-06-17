@@ -20,6 +20,7 @@
     "jasmine-node": "~1.8.1"
   },
   "dependencies": {
-    "nano": "~3.3.8"
+    "nano": "~3.3.8",
+    "async": "~0.2.9"
   }
 }

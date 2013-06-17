@@ -1,1 +1,1 @@
-module.exports = require("./lib/cc");
+module.exports = require("./lib/hc");
