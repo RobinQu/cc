@@ -22,8 +22,7 @@ where `$CC_ROOT` is default to the directory containing current running file (ak
       }
       console.log(conf);
     });
-    
-    
+
     
 TODO
 ----

@@ -15,5 +15,11 @@
     "async"
   ],
   "author": "RobinQu",
-  "license": "BSD"
+  "license": "BSD",
+  "devDependencies": {
+    "jasmine-node": "~1.8.1"
+  },
+  "dependencies": {
+    "nano": "~3.3.8"
+  }
 }
