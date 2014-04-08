@@ -1,5 +1,8 @@
 HC
 ==
+
+[![Build Status](https://travis-ci.org/RobinQu/hc.svg?branch=master)](https://travis-ci.org/RobinQu/hc)
+
 **Human-friendly configuration tools**
 
 
