@@ -27,7 +27,7 @@ where `$CC_ROOT` is default to the directory containing current running file (ak
 DataSources
 -----------
 
-###Local files and conventions
+### Local files and conventions
 
 `local-fs` is the default source which loads config data from local filesystem. It attemps to load file at some conventinonal places:
 
@@ -43,7 +43,7 @@ Configs for multiple environment can be supplied in a single JSON  file in the s
 		"production": {"foo":"bar"}
 	}
 
-###CouchDB source
+### CouchDB source
 	
 	var hc = require("hc");
 	hc({
@@ -60,6 +60,14 @@ Options for CouchDB source
 * **db**, db connection options, see options format in `nano`
 * **id**, doc id for config data
 
+### HTTP Source
+
+Fetch remote json configs
+
+    var source = new hc.sources.HTTP("http://config.example.com/app/config.json", function(e, conf) {
+      //TODO
+    });
+
 
     
 TODO
@@ -69,6 +77,7 @@ TODO
 
   * CouchDB 
   * ~~MongoDB~~
+  * HTTP Source
 
 * Browser Support
   

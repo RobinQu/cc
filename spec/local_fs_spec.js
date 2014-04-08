@@ -3,56 +3,41 @@ var cc = require("../index"),
 
 describe("default setup", function() {
   
-  it("should load configs from local fs", function() {
+  it("should load configs from local fs", function(done) {
     var sample = {
       "foo": "bar"
     };
     
     fs.writeFileSync("config.json", JSON.stringify(sample));
     
-    var loaded = false;
-    
-    runs(function() {
-      cc(function(e, conf) {
-        loaded = true;
-        expect(e).toBeFalsy();
-        expect(conf).toBeTruthy();
-        expect(conf.foo).toEqual(sample.foo);
-      
-        fs.unlinkSync("config.json");
-      });
+    cc(function(e, conf) {
+      expect(e).toBeFalsy();
+      expect(conf).toBeTruthy();
+      expect(conf.foo).toEqual(sample.foo);
+      fs.unlinkSync("config.json");
+      done();
     });
-    
-    waitsFor(function() {
-      return loaded;
-    }, "conf should be loaded", 1000);
     
   });
   
-  it("should load secondary config target", function() {
+  it("should load secondary config target", function(done) {
     
     if(!fs.existsSync("./config")) {
       fs.mkdirSync("./config");
     }
     
-    var loaded = false,
-        sample = {
+    var sample = {
       "foo": "bar"
     };
     fs.writeFileSync("./config/test.json", JSON.stringify(sample));
     
-    runs(function() {
-      cc(function(e, conf) {
-        loaded = true;
-        expect(e).toBeFalsy();
-        expect(conf.foo).toEqual(sample.foo);
-        fs.unlinkSync("./config/test.json");
-      });
+    cc(function(e, conf) {
+      expect(e).toBeFalsy();
+      expect(conf.foo).toEqual(sample.foo);
+      fs.unlinkSync("./config/test.json");
+      done();
     });
     
-    waitsFor(function() {
-      return loaded;
-    });
   });
   
 });

@@ -4,7 +4,7 @@
   "description": "Human-friendly configuration tools",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/jasmine-node/bin/jasmine-node --verbose --captureExceptions spec "
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "nano": "~3.3.8",
-    "async": "~0.2.9"
+    "async": "~0.2.9",
+    "request": "~2.34.0"
   }
 }

@@ -2,48 +2,32 @@ var hc = require("../index");
 
 describe("CouchDBSource", function() {
   
-  it("should load conf by naming convention", function() {
+  it("should load conf by naming convention", function(done) {
     var cSource = new hc.sources.Couch({db:"http://127.0.0.1:5984/hc"});
     
-    var loaded = false;
-    
-    runs(function() {
-      hc({
-        source: cSource
-      }, function(e, conf) {
-        loaded = true;
-        expect(e).toBeFalsy();
-        expect(conf).toBeTruthy();
-        expect(conf.foo).toEqual("bar");
-      });
+    hc({
+      source: cSource
+    }, function(e, conf) {
+      expect(e).toBeFalsy();
+      expect(conf).toBeTruthy();
+      expect(conf.foo).toEqual("bar");
+      done();
     });
     
-    waitsFor(function() {
-      return loaded;
-    }, "conf should be loaded", 1000);
   });
   
-  it("should load conf by given name", function() {
-    var loaded = false;
-    
-    runs(function() {
-      hc({
-        source: new hc.sources.Couch({
-          db:"http://127.0.0.1:5984/hc", 
-          id: "foobar"
-        })
-      }, function(e, conf) {
-        loaded = true;
-        expect(e).toBeFalsy();
-        expect(conf).toBeTruthy();
-        expect(conf.foo).toEqual("bar");
-      });
+  it("should load conf by given name", function(done) {
+    hc({
+      source: new hc.sources.Couch({
+        db:"http://127.0.0.1:5984/hc", 
+        id: "foobar"
+      })
+    }, function(e, conf) {
+      expect(e).toBeFalsy();
+      expect(conf).toBeTruthy();
+      expect(conf.foo).toEqual("bar");
+      done();
     });
-    
-    waitsFor(function() {
-      return loaded;
-    }, "conf should be loaded", 1000);
-    
   });
   
 });
