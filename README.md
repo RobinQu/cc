@@ -77,7 +77,7 @@ TODO
 
 * More configuration source support:
 
-  * CouchDB 
+  * ~~CouchDB~~
   * ~~MongoDB~~
   * ~~HTTP Source~~
 
