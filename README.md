@@ -3,6 +3,7 @@ HC
 
 **Human-friendly configuration tools**
 
+[![Build Status](https://travis-ci.org/RobinQu/hc.svg?branch=master)](https://travis-ci.org/RobinQu/hc)
 
 Usage
 -----
