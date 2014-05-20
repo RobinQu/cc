@@ -17,7 +17,8 @@
   "author": "RobinQu",
   "license": "BSD",
   "devDependencies": {
-    "jasmine-node": "~1.8.1"
+    "jasmine-node": "~1.8.1",
+    "superagent": "^0.18.0"
   },
   "dependencies": {
     "nano": "~3.3.8",

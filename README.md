@@ -79,7 +79,7 @@ TODO
 
   * CouchDB 
   * ~~MongoDB~~
-  * HTTP Source
+  * ~~HTTP Source~~
 
 * Browser Support
   
