@@ -6,5 +6,5 @@ node_js:
   - "0.10"
 before_script:
   - curl -X PUT localhost:5984/hc
-  - curl -X PUT localhost:5984/hc/config_test -d '{"foo": "bar"}'
-  - curl -X PUT localhost:5984/hc/foo -d '{"foo": "bar"}'
+  - "curl -X PUT localhost:5984/hc/config_test -d {\"foo\": \"bar\"}"
+  - "curl -X PUT localhost:5984/hc/foo -d {\"foo\": \"bar\"}"
