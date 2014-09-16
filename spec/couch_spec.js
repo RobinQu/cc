@@ -1,6 +1,6 @@
 var hc = require("../index");
 
-describe("CouchDBSource", function() {
+xdescribe("CouchDBSource", function() {
   
   it("should load conf by naming convention", function(done) {
     var cSource = new hc.sources.Couch({db:"http://127.0.0.1:5984/hc"});
