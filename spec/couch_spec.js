@@ -1,4 +1,5 @@
 var hc = require("../index");
+var expect = require("chai").expect;
 
 xdescribe("CouchDBSource", function() {
   
@@ -8,9 +9,9 @@ xdescribe("CouchDBSource", function() {
     hc({
       source: cSource
     }, function(e, conf) {
-      expect(e).toBeFalsy();
-      expect(conf).toBeTruthy();
-      expect(conf.foo).toEqual("bar");
+      if(e) {done(e);}
+      expect(conf).to.be.ok;
+      expect(conf.foo).to.equal("bar");
       done();
     });
     
@@ -23,9 +24,9 @@ xdescribe("CouchDBSource", function() {
         id: "foobar"
       })
     }, function(e, conf) {
-      expect(e).toBeFalsy();
-      expect(conf).toBeTruthy();
-      expect(conf.foo).toEqual("bar");
+      if(e) {done(e);}
+      expect(conf).to.be.ok;
+      expect(conf.foo).to.equal("bar");
       done();
     });
   });

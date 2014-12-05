@@ -1,3 +1,5 @@
+var expect = require("chai").expect;
+
 describe("http config source", function() {
   
   var http = require("http");
@@ -21,12 +23,11 @@ describe("http config source", function() {
   });
   
   it("should read from http service", function(done) {
-    
     srv.listen(9000, function() {
       hc({source: new HS("http://localhost:9000")}, function(e, conf) {
-        expect(e).toBeFalsy();
-        expect(conf).toBeTruthy();
-        expect(conf).toEqual(config);
+        if(e) {done(e);}
+        expect(conf).to.be.ok;
+        expect(conf).to.deep.equal(config);
         srv.close(done);
       });
     });
@@ -35,9 +36,9 @@ describe("http config source", function() {
   it("should replace env variable", function(done) {
     srv.listen(9000, function() {
       hc({source: new HS("http://localhost:9000/{env}")}, function(e, conf) {
-        expect(e).toBeFalsy();
-        expect(conf).toBeTruthy();
-        expect(conf.env).toEqual(process.NODE_ENV || "test");
+        if(e) {done(e);}
+        expect(conf).to.be.ok;
+        expect(conf.env).to.equal(process.NODE_ENV || "test");
         done();
         srv.close();
       });
