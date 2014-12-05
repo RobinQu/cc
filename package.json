@@ -19,7 +19,7 @@
   "devDependencies": {
     "chai": "^1.10.0",
     "mocha": "^2.0.1",
-    "superagent": "～0.21.0"
+    "superagent": "^0.21.0"
   },
   "dependencies": {
     "nano": "~3.3.8",
