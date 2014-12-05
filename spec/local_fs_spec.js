@@ -7,12 +7,15 @@ describe("default setup", function() {
     "foo": "bar"
   };
   before(function() {
-    
     fs.writeFileSync("config.json", JSON.stringify(sample));
   });
   
   after(function() {
     fs.unlinkSync("config.json");
+  });
+  
+  beforeEach(function() {
+    cc.reset();
   });
   
   it("should load configs from local fs", function(done) {
@@ -27,20 +30,18 @@ describe("default setup", function() {
   });
   
   it("should load secondary config target", function(done) {
-    
-    fs.writeFileSync("./config/test.json", JSON.stringify(sample));
-    
     cc(function(e, conf) {
       if(e) {done(e);}
       expect(conf).to.be.ok;
       expect(conf.foo).to.deep.equal(sample.foo);
       done();
     });
-    
   });
   
   it('should sync load', function() {
-    
+    var conf = cc.getSync();
+    expect(conf).to.be.ok;
+    expect(conf.foo).to.deep.equal(sample.foo);
   });
   
 });
